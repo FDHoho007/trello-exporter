@@ -5,15 +5,51 @@
 
     <meta charset="utf-8">
     <title>Trello 2 GitLab Migrator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Fabian Dietrich">
     <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/js/app.js"></script>
     <script src="assets/js/trello.js"></script>
 
 </head>
 
 <body>
 
+<h1>Trello 2 GitLab Migrator</h1>
 
+<main id="hello">
+
+    <p>
+        This tool allows you to export any of your Trello issue boards as a GitLab-compatible export,
+        so you can easily import it into your GitLab instance of choice.<br>
+        To get started login with Trello, so we can read your boards.
+    </p>
+    <button id="trello-login" onclick="trello_authorize()">Login with Trello</button>
+
+</main>
+
+<main id="choose-board">
+
+    <p>Next up you need to choose the Trello issue board you would like to export.</p>
+    <div id="trello-boards"></div>
+    <a onclick="abort_all();">Use a different Trello account</a>
+
+</main>
+
+<main id="import">
+
+</main>
+
+<main id="convert">
+
+</main>
+
+<main id="export">
+
+</main>
+
+<noscript>This web application requires JavaScript to be turned on!</noscript>
+<script>update_state();</script>
 
 </body>
 
