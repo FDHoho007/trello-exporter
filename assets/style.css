@@ -37,4 +37,55 @@ main a {
 
 #trello-boards {
     margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 8px;
+    column-gap: 16px;
+    text-align: start;
+    max-width: 800px;
+}
+
+.trello-board {
+    cursor: pointer;
+    padding: 16px;
+    border: 1px solid rgba(61, 61, 61);
+    border-radius: 10px;
+    color: #000;
+    text-decoration: none;
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+    position: relative;
+    margin: 20px 0;
+}
+.loader::after,
+.loader::before {
+    content: '';  
+    box-sizing: border-box;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid #777;
+    position: absolute;
+    left: 0;
+    top: 0;
+    animation: animloader 2s linear infinite;
+}
+.loader::after {
+    transform: scale(0);
+    animation-delay: 1s;
+}
+  
+@keyframes animloader {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
 }
