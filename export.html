@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <title>Trello Exporter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Fabian Dietrich">
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/app.js" defer></script>
+    <!--<script src="assets/js/trello.js"></script>-->
+
+    <style>
+
+        main {
+            display: none;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<h1>Trello Exporter</h1>
+
+<main id="choose-board">
+
+    <p>Next up you need to choose the Trello issue board you would like to export.</p>
+    <div id="trello-boards"></div>
+    <a href="https://students.fim.uni-passau.de/~dietrich/trello-export/">Use a different Trello account</a>
+
+</main>
+
+<main id="convert">
+
+    <p>Fetching all data about your issue board and your cards.</p>
+    <span class="loader"></span>
+    <p id="progress"></p>
+    <p>This might take some time. Do not close this window.</p>
+
+</main>
+
+<main id="finish">
+
+    <p>Finished exporting your Trello board.</p>
+
+</main>
+
+<noscript>This web application requires JavaScript to be turned on!</noscript>
+
+</body>
+
+</html>
