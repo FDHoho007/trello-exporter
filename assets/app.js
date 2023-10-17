@@ -117,7 +117,7 @@ async function exportBoard(board) {
         let lastActions = [];
         let page = 0;
         do {
-            lastActions = await api("/cards/" + card["id"] + "/actions?page=" + page++);
+            lastActions = await api("/cards/" + card["id"] + "/actions?filter=all&page=" + page++);
             board["actions"].push(...lastActions);
         } while(lastActions.length == 50);
         document.getElementById("progress").innerText = "Progress: " + i + "/" + board["cards"].length + " Cards (" + (i/board["cards"].length * 100).toFixed(2) + "%)";
