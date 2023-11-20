@@ -120,10 +120,16 @@ async function exportBoard(board) {
             lastActions = await api("/cards/" + card["id"] + "/actions?filter=all&page=" + page++);
             board["actions"].push(...lastActions);
         } while(lastActions.length == 50);
-        document.getElementById("progress").innerText = "Progress: " + i + "/" + board["cards"].length + " Cards (" + (i/board["cards"].length * 100).toFixed(2) + "%)";
-        i++
+        document.getElementById("progress").innerText = "Progress: " + i + "/" + board["cards"].length + " Cards (" + (i/board["cards"].length * 100).toFixed(2) + "%) (Step 1/2)";
+        i++;
     };
-    console.log(JSON.stringify(board));
+    i = 0;
+    let comments = board["actions"].filter(a => a["type"] == "commentCard");
+    for(let action of comments) {
+        action["reactions"] = await api("/actions/" + action["id"] + "/reactions");
+        document.getElementById("progress").innerText = "Progress: " + i + "/" + comments.length + " Actions (" + (i/comments.length * 100).toFixed(2) + "%) (Step 2/2)";
+        i++;
+    }
     let a = document.createElement("a");
     let url = URL.createObjectURL(new Blob([JSON.stringify(board)], {type: "application/json;charset=utf-8"}));
     a.href = url;
