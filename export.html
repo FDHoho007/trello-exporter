@@ -9,7 +9,6 @@
     <meta name="author" content="Fabian Dietrich">
     <link rel="stylesheet" href="assets/style.css">
     <script src="assets/app.js" defer></script>
-    <!--<script src="assets/js/trello.js"></script>-->
 
     <style>
 
@@ -45,6 +44,11 @@
 <main id="finish">
 
     <p>Finished exporting your Trello board.</p>
+    <p id="attachment-download"><br>
+        Due to CORS restrictions we were unable to download <span id="attachment-download-count"></span> 
+        attachments for you. If you are using <a href="https://github.com/FDHoho007/trello2gitlab">github.com/FDHoho007/trello2gitlab</a>, 
+        you will be aksed for this token: <span id="attachment-download-token"></span><br><br>This token will be valid for 1 day starting with your login on this page.
+    </p>
 
 </main>
 
